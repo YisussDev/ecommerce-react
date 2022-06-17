@@ -1,0 +1,63 @@
+.BarraNavegacion {
+    display: flex;
+    width: 100vw;
+    height: 65px;
+    background-color: #FFFFFF;
+    align-items: center;
+    position: fixed;
+    z-index: 100000;
+
+}
+.size_adjust{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+}
+.BarraNavegacion_boton {
+    border-radius: 10px;
+    margin: auto 20px;
+}
+.img_adjust img {
+    object-fit: cover;
+    height: 70%;
+    width: 70%;
+}
+.BarraNavegacion_perfil {
+    position: absolute;
+    right: 20px;
+    border-radius: 50%;
+}
+.BarraNavegacion_carrito {
+    position: absolute;
+    border-radius: 50%;
+    right: 80px;
+}
+.BarraLateral {
+    position: fixed;
+    width: 250px;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    padding-top: 100px;
+    transform: translateX(-110%);
+    transition: 0.5s;
+    z-index: 100000;
+
+}
+.BarraLateral ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+.BarraLateral ul li:hover{
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+.size_adjust:hover{
+    cursor: pointer;
+    background-color: #f1f1f1;
+}

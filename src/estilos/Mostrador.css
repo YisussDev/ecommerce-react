@@ -1,0 +1,34 @@
+.Mostrador {
+    display: block;
+    width: 100%;
+    height: 450px;
+    background-color: rgb(100, 100, 100);
+}
+.Mostrador > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(-250px);
+    height: 60px;
+    width: 60px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    z-index: 1000;
+}
+.boton:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+}
+#bnext{
+    right: 10px;
+    
+}
+#bprev{
+    left: 10px;
+}
