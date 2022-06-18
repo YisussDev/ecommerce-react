@@ -16,11 +16,11 @@ function App() {
   }
 
   const click = (evento) => {
-    if(evento.target.id=='bsumar'||evento.target.id=='isumar'){
+    if(evento.target.id==='bsumar'||evento.target.id==='isumar'){
       let aumento = valorp + 1;
     setValorp(aumento)
     }
-    if((evento.target.id=='brestar'||evento.target.id=='irestar')&&(valorp>1)){
+    if((evento.target.id==='brestar'||evento.target.id==='irestar')&&(valorp>=1)){
       let decremento = valorp - 1;
       setValorp(decremento)
     }
