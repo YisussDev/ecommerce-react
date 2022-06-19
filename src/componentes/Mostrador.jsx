@@ -9,9 +9,10 @@ const imagesPrueba = require.context('../images', true)
 
 
   return (
-    <div className='Mostrador'>
+    <div className='Mostrador' >
+      <div id='preloader'></div>
        
-        <img src = {imagesPrueba(`./image-product-${props.imgMostrador}.jpg`)} alt="" />
+        <img src = {imagesPrueba(`./image-product-${props.imgMostrador}.jpg`)} alt="" id='mostradorImg'/>
         <div className="boton" id='bprev' onClick={props.click}>
             <img src={imgprev} alt="" id='bprevv'/>
         </div>

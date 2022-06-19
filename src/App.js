@@ -10,7 +10,18 @@ function App() {
   const [contCarrito, setContCarrito] = useState(0);
   const [imgActual, setImgActual] = useState(0)
 
-
+  const iniciarPreloader = () => {
+    let mostrador = document.getElementById('mostradorImg')
+    mostrador.style = 'display:none'
+    let preloader =document.getElementById('preloader')
+    preloader.style = 'display:block';
+  }
+  const terminarPreloader = () => {
+    let preloader2 = document.getElementById('preloader')
+    preloader2.style = 'display:none';
+    let mostrador2 = document.getElementById('mostradorImg')
+    mostrador2.style = 'display:block'
+  }
   const click = (evento) => {
     if(evento.target.className!=="BarraLateral"&&evento.target.id!=="botonMostrar"&&evento.target.className!=="BarraNavegacion_boton img_adjust size_adjust"&&evento.target.id!=='rt'){
       let cerrarMenu = document.getElementById('BarraL');
@@ -41,23 +52,31 @@ function App() {
       setContCarrito(0);
     }
     if(evento.target.id==='bprev'||evento.target.id==='bprevv'){
+      
       if(imgActual===0){
+        iniciarPreloader();
         setImgActual(3);
+        setTimeout(()=>terminarPreloader(),500);
       }else {
+        iniciarPreloader();
         let imagenAnterior = imgActual - 1;
         setImgActual(imagenAnterior);
+        setTimeout(()=>terminarPreloader(),500)
       }
     }
     if(evento.target.id==='bnext'||evento.target.id==='bnextt'){
       if(imgActual===3){
+        iniciarPreloader();
         setImgActual(0);
+        setTimeout(()=>terminarPreloader(),500)
       }else {
+        iniciarPreloader();
         let imagenAnterior = imgActual + 1;
         setImgActual(imagenAnterior);
+        setTimeout(()=>terminarPreloader(),500)
       }
+      
     }
-    
-    console.log(imgActual)
   }
 
 
