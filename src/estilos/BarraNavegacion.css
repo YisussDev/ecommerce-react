@@ -22,8 +22,8 @@
 }
 .img_adjust img {
     object-fit: cover;
-    height: 70%;
-    width: 70%;
+    height: 60%;
+    width: 60%;
 }
 .BarraNavegacion_perfil {
     position: absolute;
@@ -43,7 +43,7 @@
     padding-top: 100px;
     transform: translateX(-110%);
     transition: 0.5s;
-    z-index: 100000;
+    z-index: 10000000;
 
 }
 .BarraLateral ul li {
@@ -60,4 +60,35 @@
 .size_adjust:hover{
     cursor: pointer;
     background-color: #f1f1f1;
+}
+#notificacion_carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: #f1f1f1;
+    width: 20px;
+    height: 15px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rgb(253, 143, 0);
+    transform: translate(10px, -10px);
+}
+#carritoFlotante{
+    position: fixed;
+    border-radius: 20px;
+    width: 95vw;
+    left: 2.5vw;
+    top: 80px;
+    min-height: 350px;
+    background-color: #FFFFFF;
+    z-index: 100000;
+    transform: translateY(-150%);
+    transition: 0.5s;
+}
+#carritoFlotante > h2 {
+    margin: 20px;
+}
+#mensajeVacio{
+    text-align: center;
 }

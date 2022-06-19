@@ -1,19 +1,22 @@
 import React from 'react'
 import '../estilos/Mostrador.css'
-import img1 from '../images/image-product-1.jpg'
 import imgnext from '../images/icon-next.svg'
 import  imgprev from '../images/icon-previous.svg'
 
-const Mostrador = () => {
+
+const Mostrador = (props) => {
+const imagesPrueba = require.context('../images', true)
+
+
   return (
     <div className='Mostrador'>
        
-        <img src={img1} alt="" />
-        <div className="boton" id='bprev'>
-            <img src={imgprev} alt="" />
+        <img src = {imagesPrueba(`./image-product-${props.imgMostrador}.jpg`)} alt="" />
+        <div className="boton" id='bprev' onClick={props.click}>
+            <img src={imgprev} alt="" id='bprevv'/>
         </div>
-        <div className="boton" id='bnext'>
-            <img src={imgnext} alt="" />
+        <div className="boton" id='bnext' onClick={props.click}>
+            <img src={imgnext} alt="" id='bnextt'/>
         </div>
     </div>
   )

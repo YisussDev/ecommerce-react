@@ -28,11 +28,11 @@ const Añadidor = (props) => {
             </div>
 
         </div>
-        <div className='Añadidor_carrito'>
+        <div className='Añadidor_carrito' id='añadirCarrito' onClick={props.click}>
             <span>
-                <img src={carrito} alt="" />
+                <img src={carrito} alt="" className='ccarrito'/>
             </span>
-            <strong>Add to Cart</strong>
+            <strong className='ccarrito'>Add to Cart</strong>
         </div>
 
     </div>
