@@ -6,18 +6,19 @@
 }
 .Contenedor_muestras{
   display: block;
-  width: 100vw;
-  min-height: 50vh;
-  padding-top: 50px;
+  width: 100%;
+  min-height: 80vh;
+  padding-top: 60px;
 }
-@media (min-width: 850px) {
+@media (min-width: 850px)  {
   .Contenedor_muestras{
     display: flex;
-    justify-content: space-evenly;
-    padding: 80px 90px;
+    padding: 0px 20vw;
+    justify-content: center;
+    padding-top: 40px;
   }
 }
-@media (min-width: 850px) and (max-width: 600px){
+@media (max-width: 850px) and (min-width: 600px){
   .Contenedor_muestras{
     display: flex;
     flex-direction: column;

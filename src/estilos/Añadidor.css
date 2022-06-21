@@ -100,10 +100,9 @@
 }
 @media (min-width: 850px) and (max-width: 2000px){
     .Añadidor{
+        display: block;
         width: 400px;
         height: 450px;
-        margin: 0px;
-        transform: scale(90%);
     }
     .Añadidor_aumentador{
         width: 150px;
@@ -112,7 +111,7 @@
     }
     .Añadidor_carrito{
         display: inline-flex;
-        width: 200px;
+        width: 180px;
         transform: translateY(4px);
         color: white;
         margin-left: 20px;

@@ -159,7 +159,7 @@ function App() {
       click = {click}
       />
       <div className='Contenedor_muestras'>
-          <Mostrador 
+      <Mostrador 
       click = {click}
       imgMostrador = {imgActual}
       />
