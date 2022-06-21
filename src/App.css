@@ -4,3 +4,23 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+.Contenedor_muestras{
+  display: block;
+  width: 100vw;
+  min-height: 50vh;
+  padding-top: 50px;
+}
+@media (min-width: 850px) {
+  .Contenedor_muestras{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 80px 90px;
+  }
+}
+@media (min-width: 850px) and (max-width: 600px){
+  .Contenedor_muestras{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

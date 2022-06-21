@@ -3,24 +3,38 @@ import './App.css';
 import Añadidor from './componentes/Añadidor';
 import BarraNavegacion from './componentes/BarraNavegacion';
 import Mostrador from './componentes/Mostrador';
+import MostradorFlotante from './componentes/MostradorFlotante';
 
 function App() {
 
   const [valorp, setValorp] = useState(1);
   const [contCarrito, setContCarrito] = useState(0);
   const [imgActual, setImgActual] = useState(0)
+  const [flotante, setFlotante] = useState(false)
 
   const iniciarPreloader = () => {
     let mostrador = document.getElementById('mostradorImg')
     mostrador.style = 'display:none'
     let preloader =document.getElementById('preloader')
-    preloader.style = 'display:block';
+    preloader.style = 'display:flex';
   }
   const terminarPreloader = () => {
     let preloader2 = document.getElementById('preloader')
     preloader2.style = 'display:none';
     let mostrador2 = document.getElementById('mostradorImg')
     mostrador2.style = 'display:block'
+  }
+  const iniciarPreloaderflot = () => {
+    let mostradorflot = document.getElementById('mostradorImgflot')
+    mostradorflot.style = 'display:none';
+    let preloaderflot =document.getElementById('preloader_flotante')
+    preloaderflot.style = 'display:flex';
+  }
+  const terminarPreloaderflot = () => {
+    let preloaderflot2 = document.getElementById('preloader_flotante')
+    preloaderflot2.style = 'display:none';
+    let mostradorflot2 = document.getElementById('mostradorImgflot')
+    mostradorflot2.style = 'display:block'
   }
   const click = (evento) => {
     if(evento.target.className!=="BarraLateral"&&evento.target.id!=="botonMostrar"&&evento.target.className!=="BarraNavegacion_boton img_adjust size_adjust"&&evento.target.id!=='rt'){
@@ -77,24 +91,85 @@ function App() {
       }
       
     }
+    if(evento.target.className==='imag_pc'){
+      setFlotante(true);
+    }
+    if(evento.target.className==="mostrador_flotante_fondo"){
+      setFlotante(false)
+    }
+    if(evento.target.className==="bprev_flotante"){
+      
+      if(imgActual===0){
+        iniciarPreloaderflot();
+        setImgActual(3);
+        setTimeout(()=>terminarPreloaderflot(),500);
+      }else {
+        iniciarPreloaderflot();
+        let imagenAnterior = imgActual - 1;
+        setImgActual(imagenAnterior);
+        setTimeout(()=>terminarPreloaderflot(),500)
+      }
+    }
+    if(evento.target.className==='bnext_flotante'){
+      if(imgActual===3){
+        iniciarPreloaderflot();
+        setImgActual(0);
+        setTimeout(()=>terminarPreloaderflot(),500)
+      }else {
+        iniciarPreloaderflot();
+        let imagenAnterior = imgActual + 1;
+        setImgActual(imagenAnterior);
+        setTimeout(()=>terminarPreloaderflot(),500)
+      }
+    }
+    if(evento.target.className==='imag_pc'){
+      if(evento.target.id==='imag_1'||evento.target.id==='imag_11'){
+        console.log('ok')
+        setImgActual(0)
+      }
+      if(evento.target.id==='imag_2'||evento.target.id==='imag_22'){
+        
+        setImgActual(1)
+      }
+      if(evento.target.id==='imag_3'||evento.target.id==='imag_33'){
+
+        setImgActual(2)
+
+        
+      }
+      if(evento.target.id==='imag_4'||evento.target.id==='imag_44'){
+
+        setImgActual(3)
+      }
+    }
+    console.log(evento.target.id)
   }
 
 
 
   return (
     <div className="App"onClick={click}>
+      {
+        flotante?(<MostradorFlotante 
+      click = {click}
+      imgMostrador = {imgActual}/>):(null)
+      }
       <BarraNavegacion 
       contCarrito = {contCarrito}
       click = {click}
       />
-      <Mostrador 
+      <div className='Contenedor_muestras'>
+          <Mostrador 
       click = {click}
       imgMostrador = {imgActual}
       />
+      
       <Añadidor 
       click = {click}
       cantidad = {valorp}
       />
+      </div>
+      
     </div>
   );
 }

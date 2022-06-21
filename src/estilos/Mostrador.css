@@ -1,21 +1,31 @@
+.contenedor_mostrador{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 .Mostrador {
-    display: block;
-    width: 100%;
+    width: 100vw;
     height: 450px;
-    background-color: rgb(255, 255, 255);
-    transition: 0.5s;
+
 }
 .Mostrador > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+.control{
+  display: inline-flex;
+  width: 100%;
+  padding: 0px 10px;
+  height: 60px;
+  justify-content: space-between;
+  transform: translateY(-255px);
 }
 .boton{
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    transform: translateY(-250px);
+    position: relative;
     height: 60px;
     width: 60px;
     background-color: rgb(255, 255, 255);
@@ -36,11 +46,10 @@
 
 #preloader {
     display: none;
+    z-index: 100000;
     position: absolute;
-    top: 35%;
-    left: 42%;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: 10px solid rgb(255, 145, 0);
     border-top: 10px solid #666;
     border-radius: 50%;
@@ -55,5 +64,55 @@
     }
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  .barrafotos_pc{
+    display: none;
+    width: 400px;
+    height: 80px; 
+    margin-top: 20px;
+    align-items: center;
+  }
+  .barrafotos_pc > img{
+    height: 100%;
+    width: 100%;
+    margin: 8px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid rgb(255, 255, 255);
+  }
+  .barrafotos_pc > img:hover{
+    cursor: pointer;
+    filter: opacity(25%);
+    border: 5px solid rgb(255, 145, 0);
+  }
+  
+  @media (min-width: 850px) {
+    .Mostrador{
+      width: 400px;
+      height: 400px;
+    }
+    .Mostrador > img {
+      border-radius: 30px;
+    }
+    .control{
+      display: none;
+    }
+    .barrafotos_pc{
+      display: flex;
+    }
+    .contenedor_mostrador{
+      transform: scale(90%);
+    }
+    
+  }
+  @media (max-width: 850px)and (min-width:520px){
+    .Mostrador{
+      width: 480px;
+      margin: auto;
+    }
+    #preloader{
+      display: none;
     }
   }

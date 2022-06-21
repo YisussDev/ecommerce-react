@@ -17,11 +17,20 @@ const BarraNavegacion = (props) => {
   return (
     <>
     <div className='BarraNavegacion'>
-        <div className='BarraNavegacion_boton img_adjust size_adjust' onClick={mostrarMenu}>
+        <div className='BarraNavegacion_boton img_adjust size_adjust' id='botonMenu' onClick={mostrarMenu}>
             <img src={imenu} alt="" id='rt'/>
         </div>
         <div className='BarraNavegacion_logo'>
             <img src={logo} alt="" />
+        </div>
+        <div className='BarraPc'>
+        <ul>
+            <li>Collections</li>
+            <li>Mens</li>
+            <li>Womens</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
         </div>
         <div className='BarraNavegacion_carrito img_adjust size_adjust' id='botonCarrito' onClick={props.click}>
             <img src={carrito} alt="" id='botonCarritoo'/>
