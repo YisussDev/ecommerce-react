@@ -6,6 +6,7 @@
 }
 .Contenedor_muestras{
   display: block;
+  position: relative;
   width: 100%;
   min-height: 80vh;
   padding-top: 60px;
@@ -13,13 +14,15 @@
 @media (min-width: 850px)  {
   .Contenedor_muestras{
     display: flex;
-    padding: 0px 20vw;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     padding-top: 40px;
   }
 }
 @media (max-width: 850px) and (min-width: 600px){
   .Contenedor_muestras{
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;

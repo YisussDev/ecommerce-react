@@ -1,5 +1,6 @@
 .contenedor_mostrador{
   display: flex;
+  position: relative;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -88,10 +89,11 @@
     border: 5px solid rgb(255, 145, 0);
   }
   
-  @media (min-width: 850px) and (max-width: 2000px){
+  @media (min-width: 850px){
     .contenedor_mostrador{
       width: 400px;
       display: block;
+      margin-right: 100px;
     }
     .Mostrador{
       width: 400px;
@@ -117,5 +119,8 @@
     }
     #preloader{
       display: none;
+    }
+    .Mostrador > img {
+      border-radius: 30px;
     }
   }

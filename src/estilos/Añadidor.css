@@ -98,11 +98,13 @@
     cursor: pointer;
     background-color: rgb(255, 181, 83);
 }
-@media (min-width: 850px) and (max-width: 2000px){
+@media (min-width: 850px) {
     .Añadidor{
         display: block;
         width: 400px;
         height: 450px;
+        margin: 0px;
+        
     }
     .Añadidor_aumentador{
         width: 150px;
